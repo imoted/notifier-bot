@@ -1,8 +1,6 @@
-# notify.py
-
+from datetime import datetime, timezone, timedelta
 import requests
 import os
-from datetime import datetime
 
 # LINE Notifyにメッセージを送信する関数
 def send_line_notify(message):
@@ -13,8 +11,9 @@ def send_line_notify(message):
     data = {'message': message}
     requests.post(url, headers=headers, data=data)
 
-# 曜日ごとのメッセージを送信
-today = datetime.today()
+# 日本標準時（JST）のタイムゾーンを設定
+JST = timezone(timedelta(hours=9))
+today = datetime.now(JST)
 weekday = today.weekday()
 
 if weekday == 4:  # 金曜日
