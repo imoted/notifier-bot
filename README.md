@@ -85,14 +85,6 @@ export LINE_NOTIFY_TOKEN=YOUR_LINE_NOTIFY_TOKEN
 python notify.py
 ```
 
-## 貢献
-
-1. フォークしてください
-2. 新しいブランチを作成 (`git checkout -b feature/your-feature`)
-3. 変更をコミット (`git commit -am 'Add your feature'`)
-4. ブランチにプッシュ (`git push origin feature/your-feature`)
-5. プルリクエストを作成してください
-
 ## ライセンス
 
 このプロジェクトは [MIT License](LICENSE) に基づいています。
