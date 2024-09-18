@@ -67,22 +67,16 @@ git clone https://github.com/your-username/notifier-bot.git
 cd notifier-bot
 ```
 
-2. 必要なパッケージをインストールします。
-
-```bash
-pip install -r requirements.txt
-```
-
-3. LINE Notify トークンを環境変数として設定します。
+2. LINE Notify トークンを環境変数として設定します。
 
 ```bash
 export LINE_NOTIFY_TOKEN=YOUR_LINE_NOTIFY_TOKEN
 ```
 
-4. Python スクリプトを実行します。
+3. Python スクリプトを実行します。
 
 ```bash
-python notify.py
+python3 notify.py
 ```
 
 ## ライセンス
