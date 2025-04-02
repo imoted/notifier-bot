@@ -19,7 +19,20 @@ def send_line_message(message):
             }
         ]
     }
-    requests.post(url, headers=headers, json=data)
+
+    try:
+        response = requests.post(url, headers=headers, json=data)
+        response.raise_for_status()  # エラーステータスコードの場合例外を発生
+        print(f"メッセージを送信しました: {message}")
+        return True
+    except requests.exceptions.HTTPError as http_err:
+        error_message = f"HTTP エラーが発生しました: {http_err} - レスポンス: {response.text}"
+        print(error_message)
+        return error_message
+    except requests.exceptions.RequestException as err:
+        error_message = f"リクエストエラーが発生しました: {err}"
+        print(error_message)
+        return error_message
 
 # 日本標準時（JST）のタイムゾーンを設定
 JST = timezone(timedelta(hours=9))
