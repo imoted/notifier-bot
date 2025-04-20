@@ -7,9 +7,10 @@ def send_line_message(message):
     url = 'https://api.line.me/v2/bot/message/push'
     headers = {
         'Content-Type': 'application/json',
-        'Authorization': f'Bearer {os.getenv("LINE_CHANNEL_ACCESS_TOKEN")}'
+        'Authorization': 'Bearer ' + os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
     }
     user_id = os.getenv("LINE_USER_ID")  # メッセージを送信するユーザーID
+
     data = {
         'to': user_id,
         'messages': [

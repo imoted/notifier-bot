@@ -2,13 +2,15 @@ name: Weekly Line Notify
 
 on:
   schedule:
+    # ワークフローを手動で実行できるようにする
+    workflow_dispatch:
     # cronスケジュールの設定
     # UTC時間で設定。7:00 JSTは22:00 UTC
-    - cron: '0 22 * * 5'  # 毎週金曜日の7:00 JST
-    - cron: '0 22 * * 2'  # 毎週火曜日の7:00 JST
-    - cron: '0 22 * * 3'  # 毎週水曜日の7:00 JST
-    - cron: '0 22 * * 6'  # 毎週土曜日の7:00 JST
-    - cron: '0 22 1-7,15-21 * 4'  # 毎月第1と第3木曜日の7:00 JST
+    # - cron: '0 22 * * 5'  # 毎週金曜日の7:00 JST
+    # - cron: '0 22 * * 2'  # 毎週火曜日の7:00 JST
+    # - cron: '0 22 * * 3'  # 毎週水曜日の7:00 JST
+    # - cron: '0 22 * * 6'  # 毎週土曜日の7:00 JST
+    # - cron: '0 22 1-7,15-21 * 4'  # 毎月第1と第3木曜日の7:00 JST
 
 jobs:
   notify:
